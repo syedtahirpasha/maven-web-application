@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MithunTechnologies- Home Page</title>
-<link href="images/mithunlogo.jpg" rel="icon">
+<title>syed Technologies- Home Page</title>
+<link href="images/syedlogo.jpg" rel="icon">
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Mithun Technologies</h1>
-<h1 align="center">Phone Number: +91 9980923216</h1>
+<h1 align="center">Welcome to syed Technologies</h1>
+<h1 align="center">Phone Number: +91 9908032397</h1>
 <h1 align="center">syed Technologies is a Very Good Training Center for DevOps, Cloud, Kubernetes and Terraform</h1>
 
 <h1 align="center">Trainer Name: Bhaskar Reddy Lacchannagari</h1>
@@ -35,24 +35,24 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <div style="text-align: center;">
 	<span>
-		<img src="images/mithunlogo.jpg" alt="" width="100">
+		<img src="images/syedlogo.jpg" alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
-		Mithun Technologies, 
+		syed Technologies, 
 		Marathahalli,
 		Bengaluru,
 		+91 9980923216 and 
 		Devopstrainingblr@Gmail.com
 		<br>
-		<a href="mailto:Devopstrainingblr@Gmail.com">Mail to Mithun Technologies</a>
+		<a href="mailto:Devopstrainingblr@Gmail.com">Mail to syed Technologies</a>
 	</span>
 </div>
 <hr>
 	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
 <hr>
 <hr>
-<p align=center>Mithun Technologies - Consultant, Training and Development Center.</p>
-<p align=center><small>Copyrights 2025 by <a href="http://mithuntechnologies.com/">Mithun Technologies,Bengaluru</a> </small></p>
+<p align=center>syed Technologies - Consultant, Training and Development Center.</p>
+<p align=center><small>Copyrights 2025 by <a href="http://syedtechnologies.com/">syed Technologies,Bengaluru</a> </small></p>
 
 </body>
 </html>
