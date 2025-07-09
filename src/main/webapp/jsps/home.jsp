@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to syed Technologies</h1>
+<h1 align="center">Welcome to syed Technologies - GitHub webhook Example </h1>
 <h1 align="center">Phone Number: +91 9908032397</h1>
 <h1 align="center">syed Technologies is a Very Good Training Center for DevOps, Cloud, Kubernetes and Terraform</h1>
 
