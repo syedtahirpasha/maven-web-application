@@ -1,1 +1,42 @@
+node {
+    // Define the Maven tool, ensuring the variable name matches its usage
+    def mavenHome = tool name: "maven3.9.10"
+                    echo "GitHub Branch Name: ${env.BRANCH_NAME}"
+                    echo "Jenkins Node Name: ${env.NODE_NAME}"
+                    echo "Jenkins Home Directory: ${env.JENKINS_HOME}"
+                    echo "Jenkins URL: ${env.JENKINS_URL}"
+                    echo "Jenkins Job Name: ${env.JOB_NAME}"
+                    echo "Jenkins Build Number: ${env.BUILD_NUMBER}"
+    stage('checkoutcode') {
+        // Checkout the code from the specified Git repository and branch
+        git branch: 'development', credentialsId: 'eb19accf-4694-4e18-8c63-c23da4d67eab', url: 'https://github.com/syedtahirpasha/maven-web-application.git'
+    }
+
+    stage('Build') {
+        // Execute the Maven clean package command using the correctly referenced mavenHome variable
+        sh "${mavenHome}/bin/mvn clean package"
+    }
+
+    stage('sonarQubeReport') {
+        sh "${mavenHome}/bin/mvn clean sonar:sonar"
+
+}
+    stage('uploadArtifatIntoNexus') {
+        sh "${mavenHome}/bin/mvn clean deploy"
+
+}
+    stage('DeployAppIntoTomcat') {
+        sshagent(['8f1cd029-06b5-4456-97b2-30fc981f3872']) {
+        sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.110.207.189:/opt/apache-tomcat-9.0.52/webapps/"
+}
+
+}
+
+    stage('Email Notification'){
+       emailext body: '''Build is Over....!!
+
+       Regards,
+       Syed Nayeem Pasha Khadri.''', subject: 'Build Over....!!', to: 'syednayeemstpk@gmail.com, nayeemstpk1@gmail.com'
+    }
+}
 
