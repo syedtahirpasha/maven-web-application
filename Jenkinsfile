@@ -69,7 +69,7 @@ post{
           replyTo: 'devopstrainingblr@gmail.com'
  }
  
-}
+}//stages closing
 
 
 }//Pipeline closing
