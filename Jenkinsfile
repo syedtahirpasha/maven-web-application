@@ -6,11 +6,11 @@ tools{
 maven 'maven3.9.10'
 
 }
-
-//triggers{
-//pollSCM('* * * * *')
-//}
-
+/*
+triggers{
+pollSCM('* * * * *')
+}
+*/
 options{
 timestamps()
 buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
@@ -46,8 +46,8 @@ stages{
   stage('DeployAppIntoTomcat'){
   steps{
   sshagent(['8f1cd029-06b5-4456-97b2-30fc981f3872']) {
-        sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@65.0.177.178:/opt/apache-tomcat-9.0.52/webapps/"
-}
+   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@65.0.177.178:/opt/apache-tomcat-9.0.52/webapps/"    
+  }
   }
   }
   
@@ -56,20 +56,20 @@ stages{
 post{
 
  success{
- emailext to: 'nayeemstpk1@gmail.com,syednayeemstpk@gmail.com',
+ emailext to: 'nayeemstpk1@gmail.com',
           subject: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
           body: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
-          replyTo: 'nayeemstpk1@gmail.com'
+          replyTo: 'devopstrainingblr@gmail.com'
  }
  
  failure{
- emailext to: 'nayeemstpk1@gmail.com,syednayeemstpk@gmail.com',
+ emailext to: 'nayeemstpk1@gmail.com',
           subject: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
           body: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
-          replyTo: 'nayeemstpk1@gmail.com'
+          replyTo: 'devopstrainingblr@gmail.com'
  }
  
-}
+}//stages closing
 
 
 }//Pipeline closing
