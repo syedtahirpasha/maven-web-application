@@ -6,11 +6,11 @@ tools{
 maven 'maven3.9.10'
 
 }
-/*
+
 triggers{
-pollSCM('* * * * *')
+githubPush()
 }
-*/
+
 options{
 timestamps()
 	
