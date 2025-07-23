@@ -6,14 +6,14 @@ tools{
 maven 'maven3.9.10'
 
 }
-/*
+
 triggers{
-pollSCM('* * * * *')
+githubPush()
 }
-*/
+
 options{
 timestamps()
-buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
+
 }
 
 stages{
