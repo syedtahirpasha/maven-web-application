@@ -101,13 +101,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>syed Releases Nexus Repository</name>
-	      <url>http://172.31.42.154:8081/repository/syed-release/</url>
+	      <url>http://13.201.16.9:8081/repository/syed-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>syed Snapshot Nexus Repository </name>
-	      <url>http://172.31.42.154:8081/repository/syed-snapshot/</url>
+	      <url>http://13.201.16.9:8081/repository/syed-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
