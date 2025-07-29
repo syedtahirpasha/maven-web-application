@@ -1,5 +1,10 @@
-pipeline('node1'){
-
+pipeline{
+agent{
+node{
+label 'node1'
+}
+	
+}
 
 tools{
 maven 'maven3.9.10'
