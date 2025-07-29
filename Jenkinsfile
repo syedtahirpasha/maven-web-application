@@ -1,4 +1,4 @@
-pipeline('node1') {
+pipeline('node1'){
 
 agent any
 
