@@ -1,6 +1,5 @@
 pipeline('node1'){
 
-agent any
 
 tools{
 maven 'maven3.9.10'
