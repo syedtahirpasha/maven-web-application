@@ -43,14 +43,17 @@ stages{
   }
   }
   
-  stage('DeployAppIntoTomcat'){
+ stage('DeployAppIntoTomcat'){
   steps{
-  sshagent(['8f1cd029-06b5-4456-97b2-30fc981f3872']) {
-   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@65.0.71.194:/opt/apache-tomcat-9.0.52/webapps/"    
-   sh "scp -v -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@65.0.71.194:/opt/apache-tomcat-9.0.52/webapps/"	  
+    sshagent(['8f1cd029-06b5-4456-97b2-30fc981f3872']) {
+      // Step 1: Remove the old WAR file on the remote server
+      sh "ssh -o StrictHostKeyChecking=no ec2-user@65.0.71.194 'rm -f /opt/apache-tomcat-9.0.52/webapps/maven-web-application.war'"
+
+      // Step 2: Copy the new WAR file (with verbose output for debugging)
+      sh "scp -v -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@65.0.71.194:/opt/apache-tomcat-9.0.52/webapps/"    
+    }
   }
-  }
-  }
+}
   
 }
 
